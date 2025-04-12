@@ -8,7 +8,10 @@
     "build": "tsc",
     "watch": "tsc -w",
     "test": "jest",
-    "cdk": "cdk"
+    "cdk": "cdk",
+    "build:app": "npm --prefix ../ run build:infra",
+    "synthesize": "cdk synth > MyStack.template.yaml",
+    "deploy": "npm run build:app && npm run synthesize && cdk deploy"
   },
   "devDependencies": {
     "@types/jest": "^29.5.14",
